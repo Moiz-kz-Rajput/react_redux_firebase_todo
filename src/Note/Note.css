@@ -1,9 +1,9 @@
 .note {
     padding:10px 10px 38px 34px;
     height: auto; 
-    margin: auto;
+    /* margin: auto; */
     margin-bottom: 8px;
-    width: 60%;
+    /* width: 60%; */
     font-family: 'Lato', sans-serif;
     font-size: 1.4em;
     color: #222;

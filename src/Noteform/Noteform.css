@@ -1,5 +1,4 @@
 .formWrapper{
-    margin: auto;
     padding: 10px 0 10px 0;
 }
 
@@ -25,9 +24,7 @@
 }
 
 .noteInput{
-    width: 50%;
-    min-width: 50%px;
-    margin-left: 17%;
+    margin-bottom: 1px;
     font-size: 1.8em;
     padding-left: 20px;
     border-top-left-radius: 4px;

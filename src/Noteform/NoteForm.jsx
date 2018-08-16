@@ -31,12 +31,12 @@ export default class NoteForm extends Component{
 
     render(){
         return(
-            <div className="formWrapper">
-                <input className="noteInput" 
+            <div className="formWrapper col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-9 col-xs-offset-1">
+                <input className="noteInput col-xs-12 col-sm-12" 
                 placeholder="Write a new note..."
                 value={this.state.newNoteContent} 
                 onChange={this.handleUseInput}/>
-                <button className='noteButton'
+                <button className='noteButton col-sm-12 col-xs-12'
                 onClick={this.writeNote}>Add Note</button>    
             </div>
         )

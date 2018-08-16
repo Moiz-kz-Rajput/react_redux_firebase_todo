@@ -19,6 +19,7 @@ export function createNote(note){
     
     return dispatch => Notes.push(note);
     
+
 }
 export function deleteNote(key){
     return dispatch => Notes.child(key).remove();
