@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import './Noteform.css';
+import fire from '../config/config'; 
 
 export default class NoteForm extends Component{
     constructor(props){
@@ -7,22 +8,42 @@ export default class NoteForm extends Component{
 
         this.state={
             newNoteContent:'',
+            userId:'',
         }
 
         this.handleUseInput = this.handleUseInput.bind(this);
         this.writeNote = this.writeNote.bind(this);
     }
 
+    componentDidMount(){
+        this.authListener();
+    }
+
+    authListener(){
+        fire.auth().onAuthStateChanged((user)=>{
+            console.log("userid:"+user.uid);
+            if(user){
+                this.setState({userId:user.uid});
+                // localStorage.setItem('user',user.uid)
+            }else{
+                this.setState({userId:null});
+                // localStorage.removeItem(user);
+            }
+        })
+      }
+
     handleUseInput(e){
         this.setState({
             newNoteContent:e.target.value, //the value of user input
         })
+        
     }
 
     writeNote(){
         //call a method that sets the noteContent for a note to
         //the value of the input
-       this.props.addNote(this.state.newNoteContent);
+    //    this.props.addNote(this.state.newNoteContent);
+       this.props.addNote(this.state);
        //set newNoteContent back to an empty string.
         this.setState({
             newNoteContent:'',
