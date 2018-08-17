@@ -1,0 +1,11 @@
+
+  h1.heading {
+    text-align: center;
+    color:#00cc99;
+  }
+
+.form-container{
+  border: 1px solid #ffffff;
+  margin-top: 20vh;
+  padding: 30px 60px;
+}
