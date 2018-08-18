@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import fire from '../config/config';
 
 import './css/login.css';
-import { auth } from 'firebase';
 
 export default class ForgotPassword extends Component{
     constructor(props){
@@ -21,10 +20,11 @@ export default class ForgotPassword extends Component{
 
             auth.sendPasswordResetEmail(emailAddress).then(function() {
                 console.log("email sent");
+                this.history.pushState(null, 'login');
               }).catch(function(error) {
                 console.log("An error happened.");
               })
-        }
+            }
     render(){
         console.log(this.state.email);
         return(
