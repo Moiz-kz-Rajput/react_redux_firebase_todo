@@ -17,8 +17,6 @@ export default class Login extends Component{
         this.signup = this.signup.bind(this);
     }
     login(e){
-        // console.log(this.state.email);
-        // console.log(this.state.password);
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email,this.state.password).then((u)=>{
         }).catch((error)=>{
