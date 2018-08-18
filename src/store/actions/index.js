@@ -1,6 +1,7 @@
 import fire from '../../config/config';
 import 'firebase/database';
-import {FETCH_NOTES,CREATE_NOTE, DELETE_NOTE} from './Types';
+// import {FETCH_NOTES,CREATE_NOTE, DELETE_NOTE} from './Types';
+import {FETCH_NOTES} from './Types';
 
 
 const Notes =  fire.database().ref().child('notes');

@@ -9,3 +9,10 @@
   margin-top: 20vh;
   padding: 30px 60px;
 }
+
+.fpass{
+  margin-top: 5px;
+}
+.fpass>a{
+  text-decoration: none;
+}

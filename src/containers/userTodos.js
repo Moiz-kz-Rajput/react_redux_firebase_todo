@@ -29,7 +29,6 @@ class UserTodos extends Component {
 
     authListener(){
       fire.auth().onAuthStateChanged((user)=>{
-          console.log("user: "+user+" userid:"+user.uid);
           if(user){
               this.setState({userId:user.uid});
               // localStorage.setItem('user',user.uid)
@@ -56,13 +55,9 @@ class UserTodos extends Component {
         // let noteContent = obj.noteContent;
         // let newNoteContent = noteContent.newNoteContent;
         let objNote = obj.noteContent;
-        console.log(objNote);
         let noteContent = objNote && objNote.newNoteContent;
-        console.log(noteContent);
         let uId = objNote && objNote.userId;
-        console.log(uId);
-        console.log(this.state.userId);
-        if(uId==this.state.userId){
+        if(uId && uId===this.state.userId){
           if(noteContent!==undefined){
           return( 
             <Note key={key} note={noteContent} noteId={key}  removeNote ={this.removeNote}/>       

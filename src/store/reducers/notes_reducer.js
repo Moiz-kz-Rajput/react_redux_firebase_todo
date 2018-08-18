@@ -16,16 +16,15 @@ export default function(state = initialState, action){
         case FETCH_NOTES:
             return action.payload;
         
-    //     case CREATE_NOTE:
-    //         return{
-    //             ...state,
-    //             ...action.payload
-    //         }
+        case CREATE_NOTE:
+            return{
+                ...state,
+                ...action.payload
+            }
         
         case DELETE_NOTE:   
-            // return _.omit(state, action.payload);
-            
+            return _.omit(state, action.payload);
+        default:  
+        return state;      
     }
-
-    return state;
 }

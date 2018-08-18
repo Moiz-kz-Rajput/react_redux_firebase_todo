@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import fire from '../config/config';
+import {Link} from 'react-router-dom';
 import './css/login.css';
 
 
@@ -24,7 +25,7 @@ export default class Login extends Component{
             console.log(error);
         })
     }
-    
+
     signup(e){
         e.preventDefault();
         fire.auth().createUserWithEmailAndPassword(this.state.email,this.state.password).catch((error)=>{
@@ -43,7 +44,10 @@ export default class Login extends Component{
                         <div className="form-container">         
                                 <div className="input-group input-group-lg form-group">
                                 {/* <span className="input-group-addon" id="sizing-addon1">@</span> */}
-                                <input type="email" name='email' value={this.state.email}  onChange={(e)=>this.setState({email:e.target.value})} className="form-control" placeholder="Username" aria-describedby="sizing-addon1"/>
+                                <input type="email" name='email' value={this.state.email}  
+                                       onChange={(e)=>this.setState({email:e.target.value})} 
+                                       className="form-control" placeholder="Username" 
+                                       aria-describedby="sizing-addon1"/>
                                 </div>
                                
                                 <div className="input-group input-group-lg form-group">
@@ -53,7 +57,7 @@ export default class Login extends Component{
                                
                                 <button type="button" onClick={this.login} className="btn btn-success">SignIn</button>&nbsp;&nbsp;&nbsp;
                                 <button type="button" onClick={this.signup} className="btn btn-default">SignUp</button>
-                        
+                                <div className="fpass"><Link to="/forgot_password">Forgot password?</Link></div>         
                         </div>
                     </div>
                 {/* form closed */}

@@ -21,7 +21,6 @@ export default class NoteForm extends Component{
 
     authListener(){
         fire.auth().onAuthStateChanged((user)=>{
-            console.log("userid:"+user.uid);
             if(user){
                 this.setState({userId:user.uid});
                 // localStorage.setItem('user',user.uid)
