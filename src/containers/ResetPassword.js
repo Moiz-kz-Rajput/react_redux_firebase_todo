@@ -43,7 +43,7 @@ export default class ResetPassword extends Component {
               type="password"
               name="password"
               value={this.state.newPassword}
-              onChange={e => this.setState({ password: e.target.value })}
+              onChange={e => this.setState({ newPassword: e.target.value })}
               className="form-control"
               placeholder="Password"
               aria-describedby="sizing-addon1"
