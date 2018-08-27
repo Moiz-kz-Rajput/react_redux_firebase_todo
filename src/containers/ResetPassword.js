@@ -20,11 +20,11 @@ export default class ResetPassword extends Component {
   }
 
   onSubmit() {
-    const user = fire.auth().currentUser;
+    const auth = fire.auth();
     var newPassword = this.state.newPassword;
     console.log(newPassword);
-    user
-      .updatePassword(newPassword)
+    auth
+      .confirmPasswordReset(oobCode, newPassword)
       .then(function() {
         // Update successful.
         console.log("password reset");
