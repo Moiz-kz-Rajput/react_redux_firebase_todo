@@ -9,6 +9,10 @@ export default class ResetPassword extends Component {
       newPassword: ""
     };
 
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit() {
     const search = this.props.location.search;
     const params = new URLSearchParams(search);
     const mode = params.get("mode");
@@ -16,10 +20,6 @@ export default class ResetPassword extends Component {
     const apiKey = params.get("apiKey");
     const lang = params.get("lang");
 
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  onSubmit() {
     const auth = fire.auth();
     var newPassword = this.state.newPassword;
     console.log(newPassword);
