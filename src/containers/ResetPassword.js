@@ -22,7 +22,7 @@ export default class ResetPassword extends Component {
   onSubmit() {
     const user = fire.auth().currentUser;
     var newPassword = this.state.newPassword;
-
+    console.log(newPassword);
     user
       .updatePassword(newPassword)
       .then(function() {
