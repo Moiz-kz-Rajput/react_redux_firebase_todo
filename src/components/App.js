@@ -1,40 +1,42 @@
-import React, { Component } from 'react';
-import fire from '../config/config';
-import Login from '../containers/Login';
-import UserTodos from '../containers/userTodos';
+import React, { Component } from "react";
+import fire from "../config/config";
+import Login from "../containers/Login";
+import UserTodos from "../containers/userTodos";
+import { Redirect, Switch } from "react-router-dom";
 export default class App extends Component {
-
-  constructor(props){
+  constructor(props) {
     super(props);
-    
-    this.state = {
-      user:{}
-    }
 
+    this.state = {
+      user: null,
+      login: false
+    };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.authListener();
   }
-  authListener(){
-    fire.auth().onAuthStateChanged((user)=>{
+
+  authListener() {
+    fire.auth().onAuthStateChanged(user => {
       // console.log(user);
-      if(user){
-        this.setState({user});
+      if (user) {
+        this.setState({ user });
         // localStorage.setItem('user',user.uid)
-      }else{
-        this.setState({user:null});
+      } else {
+        this.setState({ user: null });
         // localStorage.removeItem(user);
       }
-    })
+    });
   }
 
   render() {
-    // console.log(this.state.user);
     return (
       <div>
-        {this.state.user?(<UserTodos/>):(<Login/>)}
+        {this.state.user && this.state.user ? <UserTodos /> : <Login />}
       </div>
     );
+
+    // return <Main />;
   }
 }
