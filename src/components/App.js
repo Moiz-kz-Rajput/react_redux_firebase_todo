@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import fire from "../config/config";
 import Login from "../containers/Login";
 import UserTodos from "../containers/userTodos";
-import { Redirect, Switch } from "react-router-dom";
 export default class App extends Component {
   constructor(props) {
     super(props);
